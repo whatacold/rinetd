@@ -1,0 +1,7 @@
+*.o
+rinetd
+rinetd.exe
+a.out
+tests/test_match
+tests/test_sendrecv
+*.png

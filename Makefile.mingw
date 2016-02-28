@@ -1,0 +1,11 @@
+CC=i686-w64-mingw32-gcc
+CFLAGS=-DWIN32 -DDEBUG -g
+
+rinetd.exe: rinetd.o match.o log.o conn.o getopt.o
+	$(CC) $(CFLAGS) -o $@ $^ -lws2_32
+
+clean:
+	rm -f rinetd.exe *.o
+
+%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $^
